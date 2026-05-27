@@ -1,0 +1,42 @@
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Ignorar as configurações locais do VS Code
+.vscode/
+
+# Ignorar executáveis do Linux sem extensão (comuns no Beecrowd)
+[0-9]*
+![0-9]*.cpp
+![0-9]*.c
+![0-9]*.txt
