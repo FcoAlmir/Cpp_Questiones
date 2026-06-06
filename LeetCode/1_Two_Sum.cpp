@@ -10,6 +10,7 @@ public:
         sort(temp.begin(), temp.end());
         int i = 0, j = temp.size() - 1, sum;
         vector<int> res;
+        bool test1 = true, test2 = true;
 
         while(i <= j) {
             sum = temp[i] + temp[j];
@@ -17,19 +18,20 @@ public:
             else if(sum < target) i++;
             else {
                 int v1, v2;
-                for(int k = 0 ; k < nums.size() - 1; k++) {
-                    if(nums[k] == temp[i]) {
-                        v1 = k; 
-                        k++;
+                for(int k = 0 ; k < nums.size(); k++) {
+                    if(nums[k] == temp[i] && test1) {
+                        v1 = k;
+                        test1 = false; 
                     }
-                    if(nums[k] == temp[j]) {
+                    else if(nums[k] == temp[j] && test2) {
                         v2 = k;
-                        k++;
+                        test2 = false;
+                    }
+                    if(!(test1 || test2)) {
+                        res.push_back(v1); res.push_back(v2);
+                        return res;
                     }
                 }
-
-                res.push_back(v1); res.push_back(v2);
-                return res;
             }
         }
         return res;
